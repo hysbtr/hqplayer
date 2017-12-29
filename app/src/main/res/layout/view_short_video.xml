@@ -1,0 +1,25 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/view_short_video_fullscreen_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:drawableLeft="@drawable/ic_short_full_screen"
+        android:text="按OK键进入全屏"
+        android:textColor="#fff" />
+
+    <ProgressBar
+        android:id="@+id/view_short_video_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:clickable="false"
+        android:progressDrawable="@drawable/short_video_seek_bar"
+        android:thumb="@null" />
+</RelativeLayout>

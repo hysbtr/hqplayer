@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion global_compileSdkVersion
+    defaultConfig {
+        minSdkVersion global_minSdkVersion
+        targetSdkVersion global_targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation "com.google.android.exoplayer:exoplayer-core:$global_exoplayerVersion"
+    implementation "com.google.android.exoplayer:exoplayer-hls:$global_exoplayerVersion"
+    implementation "tv.danmaku.ijk.media:ijkplayer-java:$global_ijkplayerVersion"
+}
