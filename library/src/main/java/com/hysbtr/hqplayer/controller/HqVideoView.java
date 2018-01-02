@@ -100,7 +100,9 @@ public abstract class HqVideoView extends BaseHqVideoView {
                 ((ILayoutAttachDetach) contentChildView).attachViewToParent(this, ((ViewGroup) contentChildView).getChildCount(), params);
             } else {
                 int contentChildViewIndex = ((ViewGroup) contentChildView).indexOfChild(this);
-                ((ILayoutAttachDetach) contentChildView).detachViewFromParent(contentChildViewIndex);
+                if (contentChildViewIndex >= 0) {
+                    ((ILayoutAttachDetach) contentChildView).detachViewFromParent(contentChildViewIndex);
+                }
 
                 if (originalParent instanceof ILayoutAttachDetach) {
                     if (params instanceof ViewGroup.MarginLayoutParams) {
