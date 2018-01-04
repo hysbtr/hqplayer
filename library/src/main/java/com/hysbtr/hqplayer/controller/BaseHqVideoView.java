@@ -246,14 +246,12 @@ public abstract class BaseHqVideoView extends RelativeLayout implements
                 hqPlayer.prepareAsync();
             } else if (hqPlayer.isBaseHqPlayerStatus(HqPlayerStatus.PLAYER_STATE_IDLE)) {
                 hqPlayer.prepareAsync();
+            } else if (hqPlayer.isBaseHqPlayerStatus(HqPlayerStatus.PLAYER_STATE_COMPLETION)) {
+                hqPlayer.reset();
+                hqPlayer.setDataSource(videoUrl);
+                hqPlayer.prepareAsync();
             } else {
-                if (hqPlayer.isBaseHqPlayerStatus(HqPlayerStatus.PLAYER_STATE_COMPLETION)) {
-                    hqPlayer.reset();
-                    hqPlayer.setDataSource(videoUrl);
-                    hqPlayer.prepareAsync();
-                } else {
-                    hqPlayer.changeHqPlayerStatus(hqPlayer.getHqPlayerStatus());
-                }
+                hqPlayer.changeHqPlayerStatus(hqPlayer.getHqPlayerStatus());
             }
         } catch (IOException e) {
             e.printStackTrace();
